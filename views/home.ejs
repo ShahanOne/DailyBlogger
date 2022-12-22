@@ -1,0 +1,30 @@
+<%- include("partials/header") -%>
+
+
+
+<center>
+  <h1 class="heading-home">Home</h1>
+  <p class="home-para"> <%= home %> </p>
+<hr class="home-hr">
+
+</center>
+
+<div class="container-fluid row" >
+  <% posts.forEach(function (anotherPost){ %> <!-- forEach method ,, better than for loop here -->
+    <div class="card col-lg-6">
+    <h2 > <%= anotherPost.title %> </h2>
+    <p class="posts-para">
+     <%= anotherPost.body.substring(0,100) + "..."  %>
+      <a class="read-more" href="/posts/<%=anotherPost.title %>"  > Read more </a>
+          </p>
+        </div>
+      
+
+  <%  }) %>
+</div>
+
+<center>
+  <a href="/compose"><button class="add-btn btn" type="button" ><span class="new-post">New Post</span> +</button></a>
+</center>
+
+<%- include("partials/footer") -%>

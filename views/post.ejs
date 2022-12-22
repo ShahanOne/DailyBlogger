@@ -1,0 +1,126 @@
+<%- include("partials/header") -%>
+
+<style media="screen">
+  .nav-container{
+      background-image:url("/bb.jpg");
+      background-position-y:bottom;
+      height: 18%;
+  }
+  .main-container{
+    height:90%;
+  }
+  .navbar-brand{
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #6A5495 !important;
+}
+h2{
+  font-family: 'Lobster', cursive;
+  color:#D885A3;
+}
+p{
+font-family: 'Cantarell', sans-serif;
+}
+.post-card{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 70%;
+  height: 25rem;
+  padding: 2%;
+}
+.post-para{
+  color: #694E4E;
+  text-align: left;
+}
+
+.back-btn{
+    background-color:#6A5495 ;
+    font-size: 1rem;
+    color: #fff;
+    height: 2rem;
+    width: 10%;
+  }
+  .back-btn:active{
+    background-color:#D885A3 ;
+  }
+  .delete-btn{
+    color: #fff;
+    font-size: 1rem;
+    height: 2rem;
+    width: 10%;
+    
+  }
+
+@media (max-width:1000px) {
+  .post-card{
+    height: auto;
+    width: 98%;
+  }
+  .post-head{
+    font-size: 4rem;
+    padding-bottom: 3%;
+  }
+  .post-para{
+    color: #694E4E;
+    font-size: 2.2rem;
+  }
+  .back-btn{
+    background-color:#6A5495 ;
+    font-size: 2rem;
+    color: #fff;
+   margin: 3% 0;
+    height: 3.8rem;
+    width: 20%;
+  }
+  .back-btn:active{
+    background-color:#D885A3 ;
+  }
+  .delete-btn{
+    font-size: 2rem;
+    color: #fff;
+   margin: 3% 0;
+    height: 3.8rem;
+    width: 20%;
+  }
+  .toggle-icon{
+  height: 4rem;
+  width: 4rem;
+}
+.navbar-brand{
+  font-weight: 520;
+  font-size: 3rem;
+}
+.navbar{
+  font-size: 2.2rem !important;
+}
+.navbar-toggler{
+  border-color: #573391 !important;
+  border-width: 2px;
+}
+.footer{
+    position: relative;
+
+    height: 8rem;
+  }
+  .footer p{
+    
+    font-size: 2rem;
+  }
+
+}
+
+</style>
+<center>
+<div class="card post-card">
+
+<h2 class="post-head"> <%= title %> </h2>
+<p class="post-para">  <%= body %> </p>
+</div>
+</center>
+<a href="/"><button class="btn btn-warning btn-sm back-btn" type="button">Go Back</button></a>
+
+<form  action="/delete" method="post">
+<button class="btn btn-danger btn-sm delete-btn" type="submit" name="button" value="<%=title %>">Delete Blog</button>
+</form>
+
+
+<%- include("partials/footer") -%>
