@@ -16,7 +16,7 @@ app.use(express.static("public"));
 const homeStartingContent = "Welcome to your Blog , Go to the Compose section or click on the '+' button to add a new post to  your Blog.     Happy Blogging!";
 
 
-mongoose.connect("mongodb+srv://Shahan786:Shahan-786@cluster0.ma0c6.mongodb.net/BlogsDB");
+mongoose.connect(`mongodb+srv://Shahan786:${process.env.MONGO_PASSWORD}@cluster0.ma0c6.mongodb.net/BlogsDB`);
 
 const postSchema = {
   title:{
